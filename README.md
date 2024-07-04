@@ -52,7 +52,7 @@ make all
 
 ```shell
 cd bin
-container-hooks-ctk install --toolkit-root=$(pwd)
+./container-hooks-ctk install --toolkit-root=$(pwd)
 ```
 
 4. 生成配置文件
@@ -68,14 +68,13 @@ container-hooks-ctk runtime configure --runtime=docker --default
 systemctl restart docker
 ```
 
-6. 编写自定义`oci hooks`，格式如下，必须添加第一个`prestart hook`中的`container-hooks`用于避免重复添加定义`hooks`，需要写入至`/etc/container-hooks/hooks.json`文件中（此路径可在配置文件中修改）
+6. 编写自定义`oci hooks`，格式如下，必须添加第一个`prestart hook`中的`container-hooks`用于避免重复添加定义`hooks`，需要写入至`/etc/container-hooks/hooks.json`文件中（此路径可在配置文件中修改，请注意json格式问题）
 
 ```json
 {
-  "hooks": {
-    "prestart": [
+  "prestart": [
         {
-            "path": "/usr/bin/container-hooks",
+            "path": "/usr/bin/container-hooks"
         }
     ],
     "createRuntime": [
@@ -109,7 +108,6 @@ systemctl restart docker
             "args": ["cleanup.sh", "-f"]
         }
     ]
-  }
 }
 ```
 

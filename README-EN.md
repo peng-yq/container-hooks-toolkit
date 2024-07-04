@@ -50,7 +50,7 @@ make all
 
 ```shell
 cd bin
-container-hooks-ctk install --toolkit-root=$(pwd)
+./container-hooks-ctk install --toolkit-root=$(pwd)
 ```
 
 4. Generate configuration file
@@ -66,14 +66,13 @@ container-hooks-ctk runtime configure --runtime=docker --default
 systemctl restart docker
 ```
 
-6. Write custom `oci hooks`, format as follows. The first `prestart hook` must include `container-hooks` to prevent re-adding defined `hooks`, to be written into the `/etc/container-hooks/hooks.json` file (this path can be modified in the configuration file):
+6. Write custom `oci hooks`, format as follows. The first `prestart hook` must include `container-hooks` to prevent re-adding defined `hooks`, to be written into the `/etc/container-hooks/hooks.json` file (this path can be modified in the configuration file, please note the json formatting issues):
 
 ```json
 {
-  "hooks": {
-    "prestart": [
+  "prestart": [
         {
-            "path": "/usr/bin/container-hooks",
+            "path": "/usr/bin/container-hooks"
         }
     ],
     "createRuntime": [
@@ -107,7 +106,6 @@ systemctl restart docker
             "args": ["cleanup.sh", "-f"]
         }
     ]
-  }
 }
 ```
 
