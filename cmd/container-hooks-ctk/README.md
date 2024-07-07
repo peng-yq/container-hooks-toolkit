@@ -120,15 +120,15 @@ sudo container-hooks-ctk config
 
 ```toml
 [container-hooks]
-path = "/usr/bin/container-hooks"
+path = "/etc/container-hooks/hooks.json"
+
+[container-hooks-ctk]
+path = "/usr/bin/container-hooks-ctk"
 
 [container-hooks-runtime]
 debug = "/etc/container-hooks/container-hooks-runtime.log"
 log-level = "info"
 runtimes = ["runc", "docker-runc"]
-
-[container-hooks-ctk]
-path = "/usr/bin/container-hooks-ctk"
 ```
 
 `[container-hooks]`

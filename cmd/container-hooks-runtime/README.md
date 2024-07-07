@@ -10,7 +10,7 @@
 
 **`container-hooks-runtime`需要通过`container-hooks-ctk`配置各容器运行时，配置完毕后容器运行时在执行容器命令时会自动调用`container-hooks-runtime`**。
 
-`container-hooks-runtime`的配置文件包含了`container-hooks-runtime`的配置选项，路径为`/etc/container-hooks/config.toml`，支持对其修改从而定义可信容器运行时的日志文件路径、日志级别以及底层运行时：
+`container-hooks-runtime`的配置文件包含了`container-hooks-runtime`的配置选项，路径为`/etc/container-hooks/config.toml`，支持对其修改从而定义`container-hooks-runtime`的日志文件路径、日志级别以及底层运行时：
 
 ```toml
 [container-hooks-runtime]
