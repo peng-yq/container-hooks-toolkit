@@ -2,6 +2,8 @@
 
 [English](./README-EN.md) | 简体中文
 
+关于本工具的详细介绍见[个人博客](https://peng-yq.github.io/2024/07/07/container-hooks-toolkit/)。
+
 <img src= "https://cdn.jsdelivr.net/gh/peng-yq/Gallery/202405191729398.png">
 
 `container-hooks-toolkit`用于向容器的配置文件(`config.json`)中插入自定义的`oci hooks`，组件包括：
